@@ -54,6 +54,9 @@ const coreValuesRoutes   = require('./src/aboutnith/core_values');
 const goalsRoutes        = require('./src/aboutnith/goals');
 const visionRoutes       = require('./src/aboutnith/vision_mission');
 
+// ── Department routes (public + admin) ──────────────────────────────
+const departmentRoutes = require('./src/routes/departments');
+
 // ── Authorities routes ─────────────────────────────────────────────────────
 const bogRoutes      = require('./src/authorities/blog');           // BOG
 const bwcRoutes      = require('./src/authorities/building');       // BWC
@@ -128,6 +131,9 @@ app.use('/connectivity', connectivityRoutes);
 app.use('/core-values',  coreValuesRoutes);
 app.use('/goals',        goalsRoutes);
 app.use('/vision-mission', visionRoutes);
+
+// ── Department routes (public) ─────────────────────────────────
+app.use('/departments', departmentRoutes);
 
 // ── Authorities routes ─────────────────────────────────────────────────────
 app.use('/bog',    bogRoutes);
